@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="search" class="container text-center">
+        <div class="row justify-content-md-center">
+        
+          <div class="col-md-6">
+            <input class="form-control form-control-lg justify-content-md-center search " type="text" placeholder="search" aria-label="search">
+          </div>
+         
+          <div class="col col-sm-1 symbol">
+            <span class="material-symbols-rounded">
+                search
+            </span>
+          </div>
+
+        </div>
+    </div>
+
+
+
+    
+        <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+            <div id="carousel">
+                <div id="carouselExampleCaptions" class="carousel  carousel-dark  slide ">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img id="0" src="" class="d-block img-0" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                         <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="1" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="2" src="#" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="3" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img id="4" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5></h5>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+
+                  <div id="image-info">
+                    <img src="" alt="">
+                    <p></p>
+                    <span class="material-symbols-outlined">
+                      undo
+                    </span>
+                  </div>
+
+
+                </div>
+          </div>
+   
+
+         
+
+
+
+  
+
+    
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+var responses = [];
+
+$('.carousel').hide();
+$('#image-info').hide();
+$('.material-symbols-rounded').on( "click", Search);
+$('input').on("keypress", function(e){
+        if(e.which == 13){
+           Search();
+        }
+    });
+
+function Search(){
+    $('#image-info').hide();
+    var j=0;
+    var search = $('.search').val();
+
+     
+     fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?q="+search)
+     .then(res => {
+         if (res.ok) {
+             return res.json()
+         } else {
+             return Promise.reject(`Http error: ${res.status}`);
+             
+         }
+     })
+     .then(res => {
+
+      
+         for(var i = 0; i<=5;i++){
+             
+             fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/"+res.objectIDs[i])
+              .then(res => {
+                  if (res.ok){
+                      return res.json()}
+                  else{
+                      return Promise.reject(`Http error: ${res.status}`);}
+                                 
+     })
+     .then(res => {
+        
+        
+        if(res.primaryImage==""){
+         $(".carousel img").eq(j).attr('src', "6775392.jpg");}
+        else{
+          $(".carousel img").eq(j).attr('src',res.primaryImage );}
+        $("h5").eq(j).text(res.title);
+        $(".carousel p").eq(j).text(res.artistDisplayName);
+        responses[j]=res;
+
+        j++;
+        
+     
+      
+      })
+      .catch(error => {
+         console.error(error);
+       });
+          };
+     
+
+      })
+     .catch(error => {
+         console.error(error);
+     });
+     
+ 
+
+    setTimeout(function(){
+        $('.carousel').show();
+    }, 1000);
+ 
+
+};
+
+ 
+
+
+$('img').on( "click", function(){
+
+$('.carousel').hide();
+$('#image-info').show();
+
+if(responses[this.id].primaryImage==""){
+$("#image-info img").attr('src', "6775392.jpg");}
+else{
+$("#image-info img").attr('src',responses[this.id].primaryImage );}
+
+$('#image-info p').html('<b>Artist: </b>'+responses[this.id].artistDisplayName+
+'</br><b>Title: </b>'+responses[this.id].title+
+'</br><b>Repository: </b>'+responses[this.id].repository+
+'</br><b>Medium: </b>'+responses[this.id].medium+
+'</br><b>Country: </b>'+responses[this.id].country+
+'</br><b>Credits: </b>'+responses[this.id].creditLine);
+});
+
+$('.material-symbols-outlined').on( "click", function(){
+  $('.carousel').show();
+$('#image-info').hide();
+});
+
+
+</script>
+
+<style>
+  #search{
+    margin: 10px auto 10px auto;
+}
+
+.symbol{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.carousel-item img{
+
+    height: 75vh !important;
+    width: 75vw !important;
+    object-fit:scale-down !important;
+    cursor:zoom-in;
+}
+
+#image-info img{
+  width: 90vw;
+}
+
+span{
+  cursor: pointer;
+}
+
+body{
+  width: 97vw;
+}
+
+
+</style>
+</body>
+</html>
+
+<!--
+************************************************
+  funkcja: Search()
+  opis: korzystajac z wpisanych danych wyszukuje dzieki API piec dziel sztuki zwiazanych
+   z podana fraza kluczowa i wyswietla je w karuzeli obrazow   
+ 
+  funkcja: $('img').on( "click", function(){}
+  opis: funkcja po kliknieciu na jednen z obrazow znajdujacych sie w karuzeli chowa karuzele i wyswietla powiekszony obraz
+  razem z wieksza iloscia informacji na jego temat
+
+  funkcja:$('.material-symbols-outlined').on( "click", function(){}
+  opis: funkcja po kliknieciu ikony 'powrot' chowa sekcje odpowiedzialna za wyswietlanie obrazu w powiekszeniu razem z 
+  wieksza iloscia tekstu i ponownie pokazuje wczesniej przegladana karuzele dziel sztuki
+
+ autor: Paulina D.
+************************************************
+-->
